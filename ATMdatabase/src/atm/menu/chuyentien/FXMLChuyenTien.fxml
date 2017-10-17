@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.chuyentien.ChuyenTienController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label contentDisplay="CENTER" layoutX="46.0" layoutY="14.0" prefHeight="40.0" prefWidth="488.0" text="Nhập số tài khoản người nhận:  ">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField layoutX="46.0" layoutY="61.0" prefHeight="40.0" prefWidth="319.0" promptText="số TK người nhận">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button layoutX="381.0" layoutY="63.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" text="Kiểm tra">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="46.0" layoutY="118.0" prefHeight="40.0" prefWidth="320.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="168.0" prefHeight="40.0" prefWidth="320.0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="46.0" layoutY="239.0" prefHeight="40.0" prefWidth="420.0" text="Nhập số tiền cần chuyển:">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TextField layoutX="46.0" layoutY="287.0" prefHeight="40.0" prefWidth="319.0" promptText="Số tiền cần chuyển">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextField>
+            <Button layoutX="381.0" layoutY="289.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="105.0" text="Chuyển tiền">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="516.0" layoutY="351.0" mnemonicParsing="false" onAction="#goBackMenu" prefHeight="35.0" prefWidth="70.0" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Label layoutX="46.0" layoutY="337.0" prefHeight="32.0" prefWidth="319.0" textFill="#e41212">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

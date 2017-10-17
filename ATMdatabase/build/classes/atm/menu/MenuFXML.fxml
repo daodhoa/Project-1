@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.MenuController">
+   <top>
+      <Label alignment="CENTER" prefHeight="51.0" prefWidth="388.0" text="Quý khách vui lòng lựa chọn dịch vụ" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="38.0" layoutY="108.0" mnemonicParsing="false" onAction="#goNapTien" prefHeight="45.0" prefWidth="200.0" text="Nạp Tiền" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="38.0" layoutY="188.0" mnemonicParsing="false" onAction="#goChuyenTien" prefHeight="45.0" prefWidth="200.0" text="Chuyển Khoản" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="360.0" layoutY="108.0" mnemonicParsing="false" onAction="#goRutTien" prefHeight="45.0" prefWidth="200.0" text="Rút Tiền" AnchorPane.rightAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="360.0" layoutY="188.0" mnemonicParsing="false" onAction="#goVanTin" prefHeight="45.0" prefWidth="200.0" text="Vấn Tin Tài Khoản" AnchorPane.rightAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="40.0" layoutY="268.0" mnemonicParsing="false" onAction="#goDoiPin" prefHeight="45.0" prefWidth="200.0" text="Đổi Pin" AnchorPane.leftAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="360.0" layoutY="268.0" mnemonicParsing="false" onAction="#goDichVu" prefHeight="45.0" prefWidth="200.0" text="Dịch Vụ Khác" AnchorPane.rightAnchor="40.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="lbHello" alignment="CENTER" layoutX="195.0" layoutY="31.0" prefHeight="31.0" prefWidth="210.0" text="Label">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="446.0" layoutY="34.0" mnemonicParsing="false" onAction="#showLabel" text="Button" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

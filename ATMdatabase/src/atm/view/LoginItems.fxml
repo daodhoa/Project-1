@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.view.LoginItemsController">
+   <center>
+      <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+               <children>
+                  <TextField fx:id="txtId" layoutX="355.0" layoutY="148.0" prefHeight="37.0" prefWidth="201.0" promptText="id" />
+                  <PasswordField fx:id="txtPass" layoutX="355.0" layoutY="199.0" prefHeight="34.0" prefWidth="201.0" promptText="pass" />
+                  <Button layoutX="355.0" layoutY="262.0" mnemonicParsing="false" onAction="#goMenu" prefHeight="30.0" prefWidth="200.0" text="Login">
+                     <font>
+                        <Font size="15.0" />
+                     </font></Button>
+                  <Label fx:id="errorLabel" layoutX="355.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" />
+                  <Label alignment="CENTER" layoutX="13.0" layoutY="126.0" prefHeight="44.0" prefWidth="341.0" text="Vui lòng đăng nhập để sử dụng">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="109.0" layoutY="192.0" prefHeight="34.0" prefWidth="124.0" text="hoặc">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="71.0" layoutY="262.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Đăng kí tài khoản">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children></FlowPane>
+   </center>
+</BorderPane>
