@@ -48,12 +48,6 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="lbHello" alignment="CENTER" layoutX="195.0" layoutY="31.0" prefHeight="31.0" prefWidth="210.0" text="Label">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <Button layoutX="446.0" layoutY="34.0" mnemonicParsing="false" onAction="#showLabel" text="Button" />
          </children>
       </AnchorPane>
    </center>

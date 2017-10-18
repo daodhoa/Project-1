@@ -11,47 +11,52 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="27.0" layoutY="80.0" prefHeight="36.0" prefWidth="203.0" text="Khách hàng:">
+            <Label fx:id="KhachHang" layoutX="27.0" layoutY="80.0" prefHeight="36.0" prefWidth="203.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="126.0" prefHeight="36.0" prefWidth="203.0" text="Số TK:">
+            <Label fx:id="SoTK" layoutX="27.0" layoutY="126.0" prefHeight="36.0" prefWidth="203.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="80.0" prefHeight="36.0" prefWidth="291.0">
+            <Label fx:id="lbTen" layoutX="230.0" layoutY="80.0" prefHeight="36.0" prefWidth="291.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="171.0" prefHeight="36.0" prefWidth="203.0" text="Số dư TK:">
+            <Label fx:id="SoDuTK" layoutX="27.0" layoutY="171.0" prefHeight="36.0" prefWidth="203.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="27.0" layoutY="222.0" prefHeight="36.0" prefWidth="203.0" text="ngày/tháng/năm:">
+            <Label fx:id="Date" layoutX="27.0" layoutY="222.0" prefHeight="36.0" prefWidth="203.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="126.0" prefHeight="36.0" prefWidth="291.0">
+            <Label fx:id="lbSoTK" layoutX="230.0" layoutY="126.0" prefHeight="36.0" prefWidth="291.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="171.0" prefHeight="36.0" prefWidth="291.0">
+            <Label fx:id="lbSoDu" layoutX="230.0" layoutY="171.0" prefHeight="36.0" prefWidth="291.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="230.0" layoutY="222.0" prefHeight="36.0" prefWidth="291.0">
+            <Label fx:id="lbDate" layoutX="230.0" layoutY="222.0" prefHeight="36.0" prefWidth="291.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <Button layoutX="515.0" layoutY="351.0" mnemonicParsing="false" onAction="#goBackMenu" prefHeight="35.0" prefWidth="71.0" text="Back">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="247.0" layoutY="37.0" mnemonicParsing="false" onAction="#vanTin" prefHeight="35.0" prefWidth="107.0" text="Tiếp Tục">
                <font>
                   <Font size="15.0" />
                </font>

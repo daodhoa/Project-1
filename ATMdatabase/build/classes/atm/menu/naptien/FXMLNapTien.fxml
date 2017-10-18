@@ -8,30 +8,25 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.naptien.NapTienController">
-   <center>
+   <right>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="14.0" layoutY="104.0" prefHeight="40.0" prefWidth="200.0" text="Nhập mã số thẻ(10 chữ số)">
+            <Label alignment="CENTER" layoutY="180.0" prefHeight="40.0" prefWidth="200.0" text="Nhập mã số thẻ(10 chữ số)">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txtCode" layoutX="219.0" layoutY="104.0" prefHeight="40.0" prefWidth="253.0" promptText="mã số thẻ">
+            <TextField fx:id="txtCode" layoutX="206.0" layoutY="180.0" prefHeight="40.0" prefWidth="266.0" promptText="mã số thẻ">
                <font>
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Button layoutX="472.0" layoutY="104.0" mnemonicParsing="false" onAction="#napTien" prefHeight="40.0" prefWidth="125.0" text="Nạp">
+            <Button layoutX="472.0" layoutY="180.0" mnemonicParsing="false" onAction="#napTien" prefHeight="40.0" prefWidth="125.0" text="Nạp">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="219.0" layoutY="200.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="146.0" text="Tiếp tục">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Button>
-            <Label fx:id="lbCheck" layoutX="219.0" layoutY="61.0" prefHeight="31.0" prefWidth="253.0" text="Label" textFill="#e42020">
+            <Label fx:id="lbCheck" layoutX="219.0" layoutY="61.0" prefHeight="31.0" prefWidth="253.0" textFill="#e42020">
                <font>
                   <Font size="15.0" />
                </font>
@@ -43,5 +38,5 @@
             </Button>
          </children>
       </AnchorPane>
-   </center>
+   </right>
 </BorderPane>

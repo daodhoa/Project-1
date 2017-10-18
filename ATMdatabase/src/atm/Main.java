@@ -97,6 +97,12 @@ public static void showNapTienTC() throws IOException{
     BorderPane napTienTC= loader.load();
     mainLayout.setCenter(napTienTC);
 }
+public static void showVanTinTest() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/vantin/FXMLVanTinTest.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
     /**
      * @param args the command line arguments
      */
