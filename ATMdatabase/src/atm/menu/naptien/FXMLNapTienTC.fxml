@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.naptien.NapTienTCController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="18.0" layoutY="101.0" prefHeight="54.0" prefWidth="564.0" text="BẠN VỪA NẠP TIỀN THÀNH CÔNG, BẠN CÓ MUỐN TIẾP TỤC KHÔNG?" textFill="#e10e0e">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="151.0" layoutY="200.0" mnemonicParsing="false" onAction="#tiepTuc" prefHeight="41.0" prefWidth="113.0" text="Tiếp tục">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+            <Button layoutX="342.0" layoutY="200.0" mnemonicParsing="false" onAction="#goBackMenu" prefHeight="41.0" prefWidth="113.0" text="Trở về  MENU">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

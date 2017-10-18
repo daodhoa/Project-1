@@ -90,6 +90,13 @@ public static void showDichVuView() throws IOException{
     BorderPane dichVu= loader.load();
     mainLayout.setCenter(dichVu);
 }
+
+public static void showNapTienTC() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/naptien/FXMLNapTienTC.fxml"));
+    BorderPane napTienTC= loader.load();
+    mainLayout.setCenter(napTienTC);
+}
     /**
      * @param args the command line arguments
      */

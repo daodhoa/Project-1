@@ -77,20 +77,21 @@ public class NapTienController {
     }
     
     @FXML
-    private void napTien(){
+    private void napTien() throws IOException{
         if(txtCode.getText().equals(getCode())){
             int money = getMoney(txtCode.getText());
             System.out.println("Money: "+ money);
             try {
-                pS= connection.prepareStatement("update KhachHang set SoDu= SoDu + ? where ID = ?");
+                pS= connection.prepareStatement("update KhachHang set SoDu= SoDu + ? where ID = ?; delete from TheNap where MaThe = ?");
                 pS.setInt(1, money);
                 pS.setString(2, Logined);
+                pS.setString(3, txtCode.getText());
                 pS.execute();
                 connection.close();
             } catch (SQLException ex) {
                 Logger.getLogger(NapTienController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            lbCheck.setText("Bạn nạp thành công");
+            Main.showNapTienTC();
         }else{
             lbCheck.setText("Bạn nạp sai, vui lòng thử lại!");
         }
