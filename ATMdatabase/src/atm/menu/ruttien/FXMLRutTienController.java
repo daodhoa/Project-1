@@ -46,48 +46,59 @@ public class FXMLRutTienController {
         }
         return curMoney;
     }
-    int x= soTienHienTai() - 50000;
-    
+    private void truTien(){
+         try {
+            pS= connection.prepareStatement("update KhachHang set SoDu = (SoDu- ?) where ID= ? ");
+            pS.setInt(1, money);
+            pS.setString(2, Logined);
+            pS.execute();
+        } catch (SQLException ex) {
+            Logger.getLogger(BienLaiController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     @FXML
     private void tien100() throws IOException{
+        int x= soTienHienTai()- 50000;
         money= 100000;
-        if(money < x){
+        if(money > x){
             Main.showThongBaoRT();
-        }
-        Main.showBienLai();
+        }else Main.showBienLai(); truTien();
     }
     @FXML
     private void tien500() throws IOException{
+         int x= soTienHienTai()- 50000;
         money= 500000;
-        if(money < x){
+        if(money > x){
             Main.showThongBaoRT();
-        }
-        Main.showBienLai();
+        }else Main.showBienLai(); truTien();
     }
     @FXML
     private void tien1k() throws IOException{
+         int x= soTienHienTai()- 50000;
         money= 1000000;
-        if(money < x){
+        if(money > x){
             Main.showThongBaoRT();
-        }
-        Main.showBienLai();
+        }else Main.showBienLai(); truTien();
     }
     @FXML
     private void tien1k5() throws IOException{
+         int x= soTienHienTai()- 50000;
+        System.out.println(x);
         money= 1500000;
-        if(money < x){
+        if(money > x){
             Main.showThongBaoRT();
-        }
-        Main.showBienLai();
+        }else Main.showBienLai(); truTien();
     }
+    
     @FXML
     private void tien2k() throws IOException{
+         int x= soTienHienTai()- 50000;
         money= 2000000;
-        if(money < x){
+        if(money > x){
             Main.showThongBaoRT();
-        }
-        Main.showBienLai();
+        }else  Main.showBienLai(); truTien();
     }
+    
     @FXML
     private void goSoKhac() throws IOException{
         Main.showSoKhac();

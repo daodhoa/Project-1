@@ -26,12 +26,15 @@
                   <Font size="17.0" />
                </font>
             </Button>
-            <Label fx:id="errorLabel" alignment="CENTER" layoutX="107.0" layoutY="296.0" prefHeight="44.0" prefWidth="388.0" textFill="#fc1a1a">
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="24.0" layoutY="296.0" prefHeight="44.0" prefWidth="542.0" textFill="#fc1a1a">
                <font>
                   <Font size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="txt" layoutX="158.0" layoutY="167.0" prefHeight="38.0" prefWidth="289.0" />
+            <TextField fx:id="txt" alignment="CENTER" layoutX="158.0" layoutY="151.0" prefHeight="54.0" prefWidth="289.0">
+               <font>
+                  <Font size="20.0" />
+               </font></TextField>
          </children>
       </AnchorPane>
    </center>
