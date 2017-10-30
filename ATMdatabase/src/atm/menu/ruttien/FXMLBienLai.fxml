@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.ruttien.BienLaiController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="40.0" layoutY="55.0" prefHeight="38.0" prefWidth="441.0" text="Vui lòng ấn Tiếp tục để thực hiện giao dịch">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="442.0" layoutY="52.0" mnemonicParsing="false" onAction="#showMoney" prefHeight="45.0" prefWidth="110.0" text="Tiếp tục" textFill="#e41919">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label layoutX="40.0" layoutY="131.0" prefHeight="36.0" prefWidth="162.0" text="Account:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="182.0" prefHeight="36.0" prefWidth="162.0" text="Amount:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="234.0" prefHeight="36.0" prefWidth="162.0" text="L/G balance:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="289.0" prefHeight="36.0" prefWidth="162.0" text="A/B balance:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="40.0" layoutY="342.0" prefHeight="36.0" prefWidth="162.0" text="Date:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="label" layoutX="202.0" layoutY="131.0" prefHeight="36.0" prefWidth="320.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="182.0" prefHeight="36.0" prefWidth="320.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="234.0" prefHeight="36.0" prefWidth="320.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="289.0" prefHeight="36.0" prefWidth="320.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="202.0" layoutY="342.0" prefHeight="36.0" prefWidth="320.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="504.0" layoutY="346.0" mnemonicParsing="false" onAction="#goBackRutTien" prefHeight="40.0" prefWidth="82.0" text="Trở về">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

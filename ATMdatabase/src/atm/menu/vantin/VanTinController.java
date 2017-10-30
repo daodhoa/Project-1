@@ -55,6 +55,7 @@ public class VanTinController {
     public VanTinController(){
         connection= DbConnection.connectDb();
     }
+    
     public void layDuLieu(){
         try {
             pS= connection.prepareStatement("select TenKH, CMND, SoDu from KhachHang where ID= ?");

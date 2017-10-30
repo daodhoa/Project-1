@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.ruttien.SoKhacController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="152.0" layoutY="77.0" prefHeight="56.0" prefWidth="298.0" text="Nhập số tiền (Tối đa 5.000.000 vnd)">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="247.0" layoutY="249.0" mnemonicParsing="false" onAction="#goBienLai" prefHeight="41.0" prefWidth="107.0" text="OK">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="496.0" layoutY="340.0" mnemonicParsing="false" onAction="#goBackRutTien" prefHeight="44.0" prefWidth="90.0" text="Trở về">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="107.0" layoutY="296.0" prefHeight="44.0" prefWidth="388.0" textFill="#fc1a1a">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt" layoutX="158.0" layoutY="167.0" prefHeight="38.0" prefWidth="289.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

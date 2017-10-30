@@ -6,7 +6,15 @@
 package atm.menu.ruttien;
 
 import atm.Main;
+import static atm.Main.Logined;
+import atm.connection.DbConnection;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 
 /**
@@ -15,6 +23,75 @@ import javafx.fxml.FXML;
  */
 public class FXMLRutTienController {
     private Main main;
+    public static int money= 0;
+    
+    Connection connection= null;
+    PreparedStatement pS= null;
+    ResultSet resultSet= null;
+    public FXMLRutTienController(){
+        connection= DbConnection.connectDb();
+    }
+    private int soTienHienTai(){
+        int curMoney=0;
+        try {
+            pS= connection.prepareStatement("select SoDu from KhachHang where ID= ?");
+            pS.setString(1, Logined);
+            resultSet= pS.executeQuery();
+            if(resultSet.next()){
+                curMoney= resultSet.getInt(1);
+            }
+            resultSet.close();
+        } catch (SQLException ex) {
+            Logger.getLogger(FXMLRutTienController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return curMoney;
+    }
+    int x= soTienHienTai() - 50000;
+    
+    @FXML
+    private void tien100() throws IOException{
+        money= 100000;
+        if(money < x){
+            Main.showThongBaoRT();
+        }
+        Main.showBienLai();
+    }
+    @FXML
+    private void tien500() throws IOException{
+        money= 500000;
+        if(money < x){
+            Main.showThongBaoRT();
+        }
+        Main.showBienLai();
+    }
+    @FXML
+    private void tien1k() throws IOException{
+        money= 1000000;
+        if(money < x){
+            Main.showThongBaoRT();
+        }
+        Main.showBienLai();
+    }
+    @FXML
+    private void tien1k5() throws IOException{
+        money= 1500000;
+        if(money < x){
+            Main.showThongBaoRT();
+        }
+        Main.showBienLai();
+    }
+    @FXML
+    private void tien2k() throws IOException{
+        money= 2000000;
+        if(money < x){
+            Main.showThongBaoRT();
+        }
+        Main.showBienLai();
+    }
+    @FXML
+    private void goSoKhac() throws IOException{
+        Main.showSoKhac();
+    }
     @FXML
     private void goBackMenu() throws IOException{
        Main.showMenuScene();

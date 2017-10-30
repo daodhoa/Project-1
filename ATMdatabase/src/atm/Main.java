@@ -103,6 +103,24 @@ public static void showVanTinTest() throws IOException{
     BorderPane vtt= loader.load();
     mainLayout.setCenter(vtt);
 }
+public static void showBienLai() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/ruttien/FXMLBienLai.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
+public static void showSoKhac() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/ruttien/FXMLSoKhac.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
+public static void showThongBaoRT() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/ruttien/FXMLThongBao.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
     /**
      * @param args the command line arguments
      */

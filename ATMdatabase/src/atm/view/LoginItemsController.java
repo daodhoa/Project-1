@@ -71,25 +71,15 @@ public class LoginItemsController {
         return pass;
     }
     
-    /*private void insertDangNhap(String idLogined){
-        String query = "insert into DangNhap (ID) values (?)";
-        try {
-            pS= connection.prepareStatement(query);
-            pS.setString(1, idLogined);
-            pS.execute();
-            connection.close();
-        } catch (SQLException ex) {
-            Logger.getLogger(LoginItemsController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
-    
     @FXML
     private void goMenu() throws IOException{
-        
+        if(txtId.getText().trim().length()== 0 || txtPass.getText().trim().length()== 0){
+            errorLabel.setText("Bạn chưa nhập ID hoặc Password");
+            return;
+        }
         if((txtId.getText()).equals(getID())&& txtPass.getText().equals(getPass())){
             Main.showMenuScene();
             Main.Logined = txtId.getText();
-            //System.out.println("zz"+ Main.Logined);
         }else{
             errorLabel.setText("Sai Tên đăng nhập hoặc mật khẩu");
         }

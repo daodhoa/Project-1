@@ -28,6 +28,7 @@ public class MenuController {
     private void goRutTien() throws IOException{
         Main.showRutTienScene();
     }
+    
     @FXML
     private void goChuyenTien() throws IOException{
         Main.showChuyenTienView();
