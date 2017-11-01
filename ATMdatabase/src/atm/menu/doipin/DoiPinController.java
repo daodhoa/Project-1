@@ -43,10 +43,10 @@ public class DoiPinController {
         Main.showMenuScene();
     }
     UserLogin user= new UserLogin();
-    ResultSet rs= user.getInfor();
+    ResultSet rs= null;
     Connection cnn = null;
-    
-    private void changePass(String pwd){
+    PreparedStatement ps =null;
+    /*private void changePass(String pwd){
         try {
             PreparedStatement ps= cnn.prepareStatement("update KhachHang set Pass = ? where ID = ?");
             ps.setString(1, pwd);
@@ -55,38 +55,52 @@ public class DoiPinController {
         } catch (SQLException ex) {
             Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
+    }*/
+    private String curpw;
     @FXML
     private void checkPass() throws IOException{
-        String curpw = null;
         try {
-            while(rs.next()){
-                curpw = rs.getString("Pass");               
+            PreparedStatement ps1 = cnn.prepareStatement("select Pass from KhachHang where ID= ?");
+            ps1.setString(1, Logined);
+            rs= ps1.executeQuery();
+            while (rs.next()){
+                curpw= rs.getString(1);
             }
         } catch (SQLException ex) {
             Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
         if(curPw.getText().trim().equals("") || newPw.getText().trim().equals("") || reNewPw.getText().trim().equals("")){
             label.setText("Bạn chưa nhập đầy đủ!"); 
         }else{
-            //System.out.println("zzzzz "+ curPw.getText());
-            //System.out.println("zz "+ newPw.getText());
-            //System.out.println("z "+ reNewPw.getText());
             if(curPw.getText().equals(curpw)){
-                System.out.println(curPw.getText());
-                System.out.println(curpw);
-                if(curPw.getText().equals(newPw.getText())) label.setText("Mật khẩu mới trùng với Mật khẩu cũ");
-                else if(newPw.getText().equals(reNewPw.getText())== false) label.setText("Nhập lại mật khẩu chưa đúng");
-                else{
-                    System.out.println("Đổi mật khẩu thành công");
-                    changePass(newPw.getText());
-                    Main.showDoiPinTC();
+                if(newPw.getText().equals(curPw)){
+                    label.setText("Mật khẩu mới trùng với Mật khẩu cũ của bạn");
+                }else{
+                    if(newPw.getText().equals(reNewPw.getText())){
+                        try {
+                            ps= cnn.prepareStatement("update KhachHang set Pass= ? where ID= ?");
+                            ps.setString(1, newPw.getText());
+                            ps.setString(2, Logined);
+                            ps.execute();
+                            Main.showDoiPinTC();
+                            curPw.setText(null);
+                            newPw.setText(null);
+                            reNewPw.setText(null);
+                        } catch (SQLException ex) {
+                            Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }else{
+                        label.setText("Nhập lại chưa khớp!");
+                            newPw.setText(null);
+                            reNewPw.setText(null);
+                    }
                 }
             }else{
                 label.setText("Mật khẩu cũ chưa đúng!");
-                //System.out.println(""+ curPw.getText());
-                System.out.println(curpw);
+                curPw.setText(null);
+                            newPw.setText(null);
+                            reNewPw.setText(null);
             }
         }
     }
