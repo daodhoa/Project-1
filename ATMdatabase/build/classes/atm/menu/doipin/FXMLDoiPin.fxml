@@ -16,7 +16,7 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <PasswordField layoutX="264.0" layoutY="70.0" prefHeight="40.0" prefWidth="250.0" />
+            <PasswordField fx:id="curPw" layoutX="264.0" layoutY="70.0" prefHeight="40.0" prefWidth="250.0" />
             <Label layoutX="50.0" layoutY="154.0" prefHeight="40.0" prefWidth="194.0" text="Mật khẩu mới:">
                <font>
                   <Font size="20.0" />
@@ -27,9 +27,9 @@
                   <Font size="20.0" />
                </font>
             </Label>
-            <PasswordField layoutX="264.0" layoutY="154.0" prefHeight="40.0" prefWidth="250.0" />
-            <PasswordField layoutX="264.0" layoutY="231.0" prefHeight="40.0" prefWidth="250.0" />
-            <Label layoutX="264.0" layoutY="21.0" prefHeight="35.0" prefWidth="312.0" textFill="#ee0808">
+            <PasswordField fx:id="newPw" layoutX="264.0" layoutY="154.0" prefHeight="40.0" prefWidth="250.0" />
+            <PasswordField fx:id="reNewPw" layoutX="264.0" layoutY="231.0" prefHeight="40.0" prefWidth="250.0" />
+            <Label fx:id="label" layoutX="264.0" layoutY="21.0" prefHeight="35.0" prefWidth="312.0" textFill="#ee0808">
                <font>
                   <Font size="18.0" />
                </font>
@@ -39,7 +39,7 @@
                   <Font size="15.0" />
                </font>
             </Button>
-            <Button layoutX="264.0" layoutY="291.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="154.0" text="Đổi mật khẩu">
+            <Button layoutX="264.0" layoutY="291.0" mnemonicParsing="false" onAction="#checkPass" prefHeight="30.0" prefWidth="154.0" text="Đổi mật khẩu">
                <font>
                   <Font size="15.0" />
                </font>

@@ -72,6 +72,13 @@ public static void showDoiPinView() throws IOException{
     BorderPane doiPin= loader.load();
     mainLayout.setCenter(doiPin);
 }
+public static void showDoiPinTC() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/doipin/FXMLThanhCong.fxml"));
+    BorderPane doiPin= loader.load();
+    mainLayout.setCenter(doiPin);
+}
+
 public static void showNapTienView() throws IOException{
     FXMLLoader loader= new FXMLLoader();
     loader.setLocation(Main.class.getResource("menu/naptien/FXMLNapTien.fxml"));
