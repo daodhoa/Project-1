@@ -84,4 +84,8 @@ public class LoginItemsController {
             errorLabel.setText("Sai Tên đăng nhập hoặc mật khẩu");
         }
     }
+    @FXML
+    private void goDangKi() throws IOException{
+        Main.showDangKi();
+    }
 }

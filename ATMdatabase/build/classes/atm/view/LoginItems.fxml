@@ -31,7 +31,7 @@
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <Button layoutX="71.0" layoutY="262.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Đăng kí tài khoản">
+                  <Button layoutX="71.0" layoutY="262.0" mnemonicParsing="false" onAction="#goDangKi" prefHeight="30.0" prefWidth="200.0" text="Đăng kí tài khoản">
                      <font>
                         <Font size="15.0" />
                      </font>

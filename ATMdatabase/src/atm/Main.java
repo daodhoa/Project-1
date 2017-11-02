@@ -134,6 +134,18 @@ public static void showThongBaoRT() throws IOException{
     BorderPane vtt= loader.load();
     mainLayout.setCenter(vtt);
 }
+public static void showDangKi() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("dangki/FXMLDangKi.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
+public static void showDangKiTC() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("dangki/FXMLDangKiTC.fxml"));
+    BorderPane vtt= loader.load();
+    mainLayout.setCenter(vtt);
+}
     /**
      * @param args the command line arguments
      */
