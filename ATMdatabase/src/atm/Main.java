@@ -65,6 +65,12 @@ public static void showChuyenTienView() throws IOException{
     BorderPane chuyenTien= loader.load();
     mainLayout.setCenter(chuyenTien);
 }
+public static void showChuyenTienTC() throws IOException{
+    FXMLLoader loader= new FXMLLoader();
+    loader.setLocation(Main.class.getResource("menu/chuyentien/FXMLChuyenTienTC.fxml"));
+    BorderPane chuyenTien= loader.load();
+    mainLayout.setCenter(chuyenTien);
+}
 
 public static void showDoiPinView() throws IOException{
     FXMLLoader loader= new FXMLLoader();

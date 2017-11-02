@@ -7,7 +7,6 @@ package atm.menu.doipin;
 
 import atm.Main;
 import static atm.Main.Logined;
-import atm.UserLogin;
 import atm.connection.DbConnection;
 import java.io.IOException;
 import java.sql.Connection;
@@ -42,7 +41,7 @@ public class DoiPinController {
     private void goBackMenu() throws IOException{
         Main.showMenuScene();
     }
-    UserLogin user= new UserLogin();
+    //UserLogin user= new UserLogin();
     ResultSet rs= null;
     Connection cnn = null;
     PreparedStatement ps =null;
@@ -64,7 +63,7 @@ public class DoiPinController {
             ps1.setString(1, Logined);
             rs= ps1.executeQuery();
             while (rs.next()){
-                curpw= rs.getString(1);
+                curpw= rs.getString(1); 
             }
         } catch (SQLException ex) {
             Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
