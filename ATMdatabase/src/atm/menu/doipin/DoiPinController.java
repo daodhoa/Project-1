@@ -8,6 +8,7 @@ package atm.menu.doipin;
 import atm.Main;
 import static atm.Main.Logined;
 import atm.connection.DbConnection;
+import atm.connection.MaHoa;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -45,16 +46,6 @@ public class DoiPinController {
     ResultSet rs= null;
     Connection cnn = null;
     PreparedStatement ps =null;
-    /*private void changePass(String pwd){
-        try {
-            PreparedStatement ps= cnn.prepareStatement("update KhachHang set Pass = ? where ID = ?");
-            ps.setString(1, pwd);
-            ps.setString(2, Logined);
-            ps.execute();
-        } catch (SQLException ex) {
-            Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }*/
     private String curpw;
     @FXML
     private void checkPass() throws IOException{
@@ -68,18 +59,18 @@ public class DoiPinController {
         } catch (SQLException ex) {
             Logger.getLogger(DoiPinController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+       
         if(curPw.getText().trim().equals("") || newPw.getText().trim().equals("") || reNewPw.getText().trim().equals("")){
             label.setText("Bạn chưa nhập đầy đủ!"); 
         }else{
-            if(curPw.getText().equals(curpw)){
-                if(newPw.getText().equals(curPw)){
-                    label.setText("Mật khẩu mới trùng với Mật khẩu cũ của bạn");
+            if( MaHoa.md5(curPw.getText()).equals(curpw)){
+                if(newPw.getText().equals(curPw.getText())){
+                    label.setText("Mật khẩu mới đã tồn tại");
                 }else{
                     if(newPw.getText().equals(reNewPw.getText())){
                         try {
                             ps= cnn.prepareStatement("update KhachHang set Pass= ? where ID= ?");
-                            ps.setString(1, newPw.getText());
+                            ps.setString(1,  MaHoa.md5(newPw.getText()));
                             ps.setString(2, Logined);
                             ps.execute();
                             Main.showDoiPinTC();

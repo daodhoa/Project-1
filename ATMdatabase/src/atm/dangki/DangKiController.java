@@ -7,6 +7,7 @@ package atm.dangki;
 
 import atm.Main;
 import atm.connection.DbConnection;
+import atm.connection.MaHoa;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -62,7 +63,7 @@ public class DangKiController {
                     checkCMND= resultSet.getString("CMND");
                 }
                 resultSet.close();
-                System.out.println("check CMND" +checkCMND);
+                //System.out.println("check CMND" +checkCMND);
                 ps1= connection.prepareStatement("select ID from KhachHang where ID = ?");
                 ps1.setString(1, idTxt.getText());
                 rs= ps1.executeQuery();
@@ -80,7 +81,7 @@ public class DangKiController {
                     ps.setString(4, diaChi.getText());
                     ps.setString(5, date);
                     ps.setString(6, idTxt.getText());
-                    ps.setString(7, pwTxt.getText());
+                    ps.setString(7, MaHoa.md5(pwTxt.getText())); 
                     ps.setInt(8, 50000);
                     ps.execute();
                     ps.close();

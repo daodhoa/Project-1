@@ -7,6 +7,7 @@ package atm.view;
 
 import atm.Main;
 import atm.connection.DbConnection;
+import atm.connection.MaHoa;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -59,7 +60,7 @@ public class LoginItemsController {
         String pass= "";
         try {
             pS= connection.prepareStatement("Select Pass from KhachHang where Pass= ?");
-            pS.setString(1, txtPass.getText());
+            pS.setString(1, MaHoa.md5(txtPass.getText()));
             resultSet= pS.executeQuery();
             if(resultSet.next()){
                 pass= resultSet.getString(1);
@@ -70,14 +71,14 @@ public class LoginItemsController {
         }
         return pass;
     }
-    
+
     @FXML
     private void goMenu() throws IOException{
         if(txtId.getText().trim().length()== 0 || txtPass.getText().trim().length()== 0){
             errorLabel.setText("Bạn chưa nhập ID hoặc Password");
             return;
         }
-        if((txtId.getText()).equals(getID())&& txtPass.getText().equals(getPass())){
+        if((txtId.getText()).equals(getID())&&  MaHoa.md5(txtPass.getText()).equals(getPass())){
             Main.showMenuScene();
             Main.Logined = txtId.getText();
         }else{
