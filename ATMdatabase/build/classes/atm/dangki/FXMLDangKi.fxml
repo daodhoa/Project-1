@@ -36,7 +36,7 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label layoutX="47.0" layoutY="221.0" prefHeight="30.0" prefWidth="120.0" text="Tên đăng nhập">
+            <Label layoutX="47.0" layoutY="221.0" prefHeight="30.0" prefWidth="120.0" text="Email">
                <font>
                   <Font size="15.0" />
                </font>
@@ -66,7 +66,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <TextField fx:id="idTxt" layoutX="186.0" layoutY="221.0" prefHeight="30.0" prefWidth="301.0">
+            <TextField fx:id="email" layoutX="186.0" layoutY="221.0" prefHeight="30.0" prefWidth="301.0">
                <font>
                   <Font size="15.0" />
                </font>

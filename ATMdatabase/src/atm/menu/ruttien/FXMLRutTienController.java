@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -24,7 +25,8 @@ import javafx.fxml.FXML;
 public class FXMLRutTienController {
     private Main main;
     public static int money= 0;
-    
+    Date date= new Date();
+    String str = String.format("%tc", date );
     Connection connection= null;
     PreparedStatement pS= null;
     ResultSet resultSet= null;
@@ -34,7 +36,7 @@ public class FXMLRutTienController {
     private int soTienHienTai(){
         int curMoney=0;
         try {
-            pS= connection.prepareStatement("select SoDu from KhachHang where ID= ?");
+            pS= connection.prepareStatement("select SoDu from TKKhachHang where SoTK= ?");
             pS.setString(1, Logined);
             resultSet= pS.executeQuery();
             if(resultSet.next()){
@@ -48,9 +50,13 @@ public class FXMLRutTienController {
     }
     private void truTien(){
          try {
-            pS= connection.prepareStatement("update KhachHang set SoDu = (SoDu- ?) where ID= ? ");
+            pS= connection.prepareStatement("update TKKhachHang set SoDu = (SoDu- ?) where SoTK= ?; insert into BienLai (MaGiaoDich, SoTienGD, SoTK, ThoiGian) values (?,?,?,?) ");
             pS.setInt(1, money);
             pS.setString(2, Logined);
+            pS.setString(3, "#4");
+            pS.setInt(4,money);
+            pS.setString(5, Logined);
+            pS.setString(6, str);
             pS.execute();
         } catch (SQLException ex) {
             Logger.getLogger(BienLaiController.class.getName()).log(Level.SEVERE, null, ex);

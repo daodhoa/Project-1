@@ -57,19 +57,28 @@ public class VanTinController {
     }
     
     public void layDuLieu(){
+        PreparedStatement ps;
         try {
-            pS= connection.prepareStatement("select TenKH, CMND, SoDu from KhachHang where ID= ?");
+            pS= connection.prepareStatement("select HoTen, SoTK, SoDu from KhachHang, TKKhachHang where SoTK= ?");
             pS.setString(1, Logined);
             resultSet= pS.executeQuery();
             while(resultSet.next()){
-                this.taiKhoan = resultSet.getString("TenKH");
-                this.soTK= resultSet.getString("CMND");
-                this.soDu= resultSet.getInt("SoDu");
+                taiKhoan = resultSet.getString("HoTen");
+                soTK= resultSet.getString("SoTK");
+                soDu= resultSet.getInt("SoDu");
             }
             resultSet.close();
+            
+            ps = connection.prepareStatement("insert into BienLai (MaGiaoDich, SoTK, ThoiGian) values (?,?,?)");
+            ps.setString(1,"#1");
+            ps.setString(2, Logined);
+            ps.setString(3, str);
+            ps.execute();
         } catch (SQLException ex) {
             Logger.getLogger(VanTinController.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }
     @FXML
     private void vanTin(){

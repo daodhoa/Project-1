@@ -63,11 +63,11 @@ public class BienLaiController {
     @FXML
     private void rutTien(){
         try {        
-            pS= connection.prepareStatement("select CMND, SoDu from KhachHang where ID= ?");
+            pS= connection.prepareStatement("select SoTK, SoDu from TKKhachHang where SoTK= ?");
             pS.setString(1, Logined);
             resultSet= pS.executeQuery();
             while(resultSet.next()){
-                cmnd= resultSet.getString("CMND");
+                cmnd= resultSet.getString("SoTK");
                 sodu= resultSet.getInt("SoDu");
             }
             resultSet.close();

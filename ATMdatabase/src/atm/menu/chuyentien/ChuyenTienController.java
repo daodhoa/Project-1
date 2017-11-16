@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -27,6 +28,8 @@ import javafx.scene.control.TextField;
 public class ChuyenTienController {
     private Main main;
    // private String cmnd;
+    Date date= new Date();
+    String str = String.format("%tc", date );
     
     Connection connection= null;
     PreparedStatement pS= null;
@@ -56,19 +59,19 @@ public class ChuyenTienController {
             lbTK.setText("Vui lòng nhập số TK người nhận");
         }else{
             try {
-                pS= connection.prepareStatement("select TenKH, CMND from KhachHang where CMND =?");
+                pS= connection.prepareStatement("select HoTen, SoTK from KhachHang, TKKhachHang where SoTK =?");
                 pS.setString(1, nhanTxt.getText());
                 resultSet= pS.executeQuery();
                 while(resultSet.next()){
-                    cm= resultSet.getString("CMND");
-                    ten= resultSet.getString("TenKH");
+                    cm= resultSet.getString("SoTK");
+                    ten= resultSet.getString("HoTen");
                 }
                 resultSet.close();
             } catch (SQLException ex) {
                 Logger.getLogger(ChuyenTienController.class.getName()).log(Level.SEVERE, null, ex);
             }
             if(cm == null){
-                lbTK.setText("Người dùng không tồn tại");
+                lbTK.setText("Tài Khoản không tồn tại");
                 nhanTxt.setText(null);
             }else{
                 lbTK.setText(cm);
@@ -80,7 +83,7 @@ public class ChuyenTienController {
     private void ChuyenTien() throws IOException{
         int mySoDu = 0;
         try {
-            pS= connection.prepareStatement("select SoDu from KhachHang where ID= ?");
+            pS= connection.prepareStatement("select SoDu from TKKhachHang where SoTK= ?");
             pS.setString(1, Logined);
             resultSet= pS.executeQuery();
             if(resultSet.next()){
@@ -102,11 +105,17 @@ public class ChuyenTienController {
                         if(tien> (mySoDu- 50000)){
                             lbCheck.setText("Tài khoản của bạn không đủ để giao dịch");
                         }else{
-                            PreparedStatement ps= connection.prepareStatement("update KhachHang set SoDu= SoDu -? where ID= ?; update KhachHang set SoDu= SoDu +? where CMND= ?");
+                            PreparedStatement ps= connection.prepareStatement("update TKKhachHang set SoDu= SoDu -? where SoTK= ?; update TKKhachHang set SoDu= SoDu +? where SoTK= ?; insert into BienLai (MaGiaoDich, SoTienGD, SoTK, SoTKNhan, ThoiGian) values (?,?,?,?,?)");
                             ps.setInt(1, tien);
                             ps.setString(2, Logined);
                             ps.setInt(3, tien);
                             ps.setString(4, lbTK.getText());
+                            
+                            ps.setString(5, "#3");
+                            ps.setInt(6, tien);
+                            ps.setString(7, Logined);
+                            ps.setString(8, lbTK.getText());
+                            ps.setString(9, str);
                             ps.execute();
                             Main.showChuyenTienTC();
                         }

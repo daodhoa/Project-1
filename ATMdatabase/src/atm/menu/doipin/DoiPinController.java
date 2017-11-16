@@ -50,7 +50,7 @@ public class DoiPinController {
     @FXML
     private void checkPass() throws IOException{
         try {
-            PreparedStatement ps1 = cnn.prepareStatement("select Pass from KhachHang where ID= ?");
+            PreparedStatement ps1 = cnn.prepareStatement("select MatKhau from TKKhachHang where SoTK= ?");
             ps1.setString(1, Logined);
             rs= ps1.executeQuery();
             while (rs.next()){
@@ -69,7 +69,7 @@ public class DoiPinController {
                 }else{
                     if(newPw.getText().equals(reNewPw.getText())){
                         try {
-                            ps= cnn.prepareStatement("update KhachHang set Pass= ? where ID= ?");
+                            ps= cnn.prepareStatement("update TKKhachHang set MatKhau= ? where SoTK= ?");
                             ps.setString(1,  MaHoa.md5(newPw.getText()));
                             ps.setString(2, Logined);
                             ps.execute();

@@ -44,7 +44,7 @@ public class LoginItemsController {
     private String getID(){
         String id= "";
         try {
-            pS= connection.prepareStatement("Select ID from KhachHang where ID= ?");
+            pS= connection.prepareStatement("Select SoTK from TKKhachHang where SoTK= ?");
             pS.setString(1, txtId.getText());
             resultSet= pS.executeQuery();
             if(resultSet.next()){
@@ -59,7 +59,7 @@ public class LoginItemsController {
     private String getPass(){
         String pass= "";
         try {
-            pS= connection.prepareStatement("Select Pass from KhachHang where Pass= ?");
+            pS= connection.prepareStatement("Select MatKhau from TKKhachHang where MatKhau= ?");
             pS.setString(1, MaHoa.md5(txtPass.getText()));
             resultSet= pS.executeQuery();
             if(resultSet.next()){
@@ -75,14 +75,14 @@ public class LoginItemsController {
     @FXML
     private void goMenu() throws IOException{
         if(txtId.getText().trim().length()== 0 || txtPass.getText().trim().length()== 0){
-            errorLabel.setText("Bạn chưa nhập ID hoặc Password");
+            errorLabel.setText("Bạn chưa nhập Số TK hoặc Password");
             return;
         }
         if((txtId.getText()).equals(getID())&&  MaHoa.md5(txtPass.getText()).equals(getPass())){
             Main.showMenuScene();
             Main.Logined = txtId.getText();
         }else{
-            errorLabel.setText("Sai Tên đăng nhập hoặc mật khẩu");
+            errorLabel.setText("Sai Số TK hoặc mật khẩu");
         }
     }
     @FXML

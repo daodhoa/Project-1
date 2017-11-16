@@ -13,6 +13,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -29,6 +30,9 @@ public class NapTienController {
     private Label lbCheck;
     @FXML
     private TextField txtCode;
+    
+    Date date= new Date();
+    String str = String.format("%tc", date );
     
     Connection connection= null;
     PreparedStatement pS= null;
@@ -82,15 +86,20 @@ public class NapTienController {
             int money = getMoney(txtCode.getText());
             System.out.println("Money: "+ money);
             try {
-                pS= connection.prepareStatement("update KhachHang set SoDu= SoDu + ? where ID = ?; delete from TheNap where MaThe = ?");
+                pS= connection.prepareStatement("update TKKhachHang set SoDu= SoDu + ? where SoTK = ?; delete from TheNap where MaThe = ?; insert into BienLai (MaGiaoDich, SoTienGD, SoTK, ThoiGian) values (?,?,?,?)");
                 pS.setInt(1, money);
                 pS.setString(2, Logined);
                 pS.setString(3, txtCode.getText());
+                pS.setString(4, "#2");
+                pS.setInt(5, money);
+                pS.setString(6, Logined);
+                pS.setString(7, str);
                 pS.execute();
                 connection.close();
             } catch (SQLException ex) {
                 Logger.getLogger(NapTienController.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
             Main.showNapTienTC();
         }else{
             lbCheck.setText("Bạn nạp sai, vui lòng thử lại!");

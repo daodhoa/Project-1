@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 public class DbConnection {
     static Connection conn= null;   
     public static Connection connectDb(){
-        String stringConn= "jdbc:sqlserver://DESKTOP-PIACE26:1433;databaseName=ATMdatabase";
+        String stringConn= "jdbc:sqlserver://;databaseName=CayLamRoi";
         try {
             conn = DriverManager.getConnection(stringConn,"sa", "123456");
         } catch (SQLException ex) {

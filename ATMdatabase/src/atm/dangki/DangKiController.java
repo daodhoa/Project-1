@@ -29,8 +29,8 @@ import javafx.scene.control.TextField;
  */
 public class DangKiController {
     Connection connection= null;
-    PreparedStatement pS= null, ps= null, ps1 = null;
-    ResultSet resultSet= null, rs = null;
+    PreparedStatement pS= null, ps= null;
+    ResultSet resultSet= null;
     public DangKiController(){
         connection= DbConnection.connectDb();
     }
@@ -38,10 +38,11 @@ public class DangKiController {
     Calendar cal = Calendar.getInstance();
     SimpleDateFormat format1 = new SimpleDateFormat("yyyy-MM-dd");
     String date = format1.format(cal.getTime());
+    
     @FXML
     private DatePicker birthTxt;
     @FXML
-    private TextField hoTen, cmnd, diaChi, idTxt, pwTxt, rePwTxt;
+    private TextField hoTen, cmnd, diaChi, pwTxt, rePwTxt, email;
     @FXML
     private Label checkLb;
     
@@ -51,8 +52,8 @@ public class DangKiController {
     }
     @FXML
     private void DangKi() throws IOException{
-        String checkCMND = "", checkID = "";
-        if(hoTen.getText().trim().equals("") || cmnd.getText().trim().equals("") || diaChi.getText().trim().equals("") || idTxt.getText().trim().equals("")|| pwTxt.getText().trim().equals("") || rePwTxt.getText().trim().equals("") || birthTxt.getValue().toString().trim().equals("")){
+        String checkCMND = "";
+        if(hoTen.getText().trim().equals("") || cmnd.getText().trim().equals("") || diaChi.getText().trim().equals("") || pwTxt.getText().trim().equals("") || rePwTxt.getText().trim().equals("") || birthTxt.getValue().toString().trim().equals("")){
             checkLb.setText("Bạn phải nhập đầy đủ thông tin");
         }else{
             try {
@@ -64,25 +65,20 @@ public class DangKiController {
                 }
                 resultSet.close();
                 //System.out.println("check CMND" +checkCMND);
-                ps1= connection.prepareStatement("select ID from KhachHang where ID = ?");
-                ps1.setString(1, idTxt.getText());
-                rs= ps1.executeQuery();
-                if(rs.next()){
-                    checkID= rs.getString("ID");
-                } 
-                rs.close();
                 
-                if("".equals(checkCMND)&& "".equals(checkID)){
+                if("".equals(checkCMND)){
                     if(pwTxt.getText().equals(rePwTxt.getText())){
-                    ps= connection.prepareStatement("insert into KhachHang values (?,?,?,?,?,?,?,?)");
-                    ps.setString(1, hoTen.getText());
-                    ps.setString(2, cmnd.getText());
+                    ps= connection.prepareStatement("insert into KhachHang values (?,?,?,?,?); insert into TKKhachHang (CMND, NgayTao, MatKhau, SoDu) values (?,?,?,?)");
+                    ps.setString(1, cmnd.getText());
+                    ps.setString(2, hoTen.getText());
                     ps.setString(3, birthTxt.getValue().toString());
-                    ps.setString(4, diaChi.getText());
-                    ps.setString(5, date);
-                    ps.setString(6, idTxt.getText());
-                    ps.setString(7, MaHoa.md5(pwTxt.getText())); 
-                    ps.setInt(8, 50000);
+                    ps.setString(4, email.getText());
+                    ps.setString(5, diaChi.getText());
+               
+                    ps.setString(6, cmnd.getText());
+                    ps.setString(7, date);
+                    ps.setString(8, MaHoa.md5(pwTxt.getText())); 
+                    ps.setInt(9, 50000);
                     ps.execute();
                     ps.close();
                     Main.showDangKiTC();
@@ -94,7 +90,6 @@ public class DangKiController {
                 }else{
                     checkLb.setText("Người dùng đã tồn tại");
                     cmnd.setText(null);
-                    idTxt.setText(null);
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(DangKiController.class.getName()).log(Level.SEVERE, null, ex);
