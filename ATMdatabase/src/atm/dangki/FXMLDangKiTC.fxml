@@ -7,21 +7,55 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.dangki.DangKiController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.dangki.DangKiTCController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="57.0" layoutY="115.0" prefHeight="66.0" prefWidth="487.0" text="Bạn đã Đăng kí thành công" textFill="#d71616">
-               <font>
-                  <Font size="27.0" />
-               </font>
-            </Label>
-            <Button layoutX="473.0" layoutY="339.0" mnemonicParsing="false" onAction="#Huy" prefHeight="47.0" prefWidth="94.0" text="Trở về">
+            <Button layoutX="492.0" layoutY="339.0" mnemonicParsing="false" onAction="#huy" prefHeight="47.0" prefWidth="94.0" text="Trở về">
                <font>
                   <Font size="15.0" />
                </font>
             </Button>
+            <Label layoutX="15.0" layoutY="14.0" prefHeight="32.0" prefWidth="582.0" text="Đăng kí thành công, vui lòng chọn tiếp tục để nhận thông tin về tài khoản">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+            <Button layoutX="243.0" layoutY="46.0" mnemonicParsing="false" onAction="#showThongTin" prefHeight="32.0" prefWidth="125.0" text="Tiếp tục">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Label fx:id="soTK" layoutX="51.0" layoutY="143.0" prefHeight="38.0" prefWidth="120.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="khachHang" layoutX="51.0" layoutY="181.0" prefHeight="38.0" prefWidth="120.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="Ngay" layoutX="51.0" layoutY="219.0" prefHeight="38.0" prefWidth="120.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="sotk" layoutX="171.0" layoutY="143.0" prefHeight="38.0" prefWidth="317.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="khachhang" layoutX="171.0" layoutY="181.0" prefHeight="38.0" prefWidth="317.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ngay" layoutX="171.0" layoutY="219.0" prefHeight="38.0" prefWidth="317.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

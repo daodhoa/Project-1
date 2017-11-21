@@ -7,21 +7,80 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.chuyentien.ChuyenTienController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.chuyentien.ChuyenTienTCController">
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="32.0" layoutY="122.0" prefHeight="78.0" prefWidth="536.0" text="Chuyển tiền thành công" textFill="#d70c0c">
-               <font>
-                  <Font size="27.0" />
-               </font>
-            </Label>
-            <Button layoutX="465.0" layoutY="325.0" mnemonicParsing="false" onAction="#goBackMenu" prefHeight="49.0" prefWidth="103.0" text="Trở về">
+            <Button layoutX="500.0" layoutY="343.0" mnemonicParsing="false" onAction="#goBackMenu" prefHeight="45.0" prefWidth="100.0" text="Trở về">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label alignment="CENTER" layoutX="14.0" layoutY="15.0" prefHeight="38.0" prefWidth="441.0" text="Chuyển tiền thành công, ấn tiếp tục để lấy biên lai">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="444.0" layoutY="14.0" mnemonicParsing="false" onAction="#showBienLai" prefHeight="38.0" prefWidth="146.0" text="Tiếp tục" textFill="#bf1e1e">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Label fx:id="soGD" layoutX="46.0" layoutY="141.0" prefHeight="35.0" prefWidth="150.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="tkChuyen" layoutX="46.0" layoutY="183.0" prefHeight="35.0" prefWidth="150.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="tkNhan" layoutX="46.0" layoutY="230.0" prefHeight="35.0" prefWidth="150.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="soTien" layoutX="46.0" layoutY="277.0" prefHeight="35.0" prefWidth="150.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="ngayGD" layoutX="46.0" layoutY="325.0" prefHeight="35.0" prefWidth="150.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbTitle" layoutX="129.0" layoutY="83.0" prefHeight="40.0" prefWidth="395.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="codeGD" layoutX="235.0" layoutY="141.0" prefHeight="35.0" prefWidth="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="accChuyen" layoutX="235.0" layoutY="183.0" prefHeight="35.0" prefWidth="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="accNhan" layoutX="235.0" layoutY="230.0" prefHeight="35.0" prefWidth="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="amount" layoutX="235.0" layoutY="277.0" prefHeight="35.0" prefWidth="300.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbDate" layoutX="235.0" layoutY="325.0" prefHeight="35.0" prefWidth="266.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

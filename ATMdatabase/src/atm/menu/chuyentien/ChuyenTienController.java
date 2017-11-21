@@ -93,12 +93,17 @@ public class ChuyenTienController {
             Logger.getLogger(ChuyenTienController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        if(!nhanTxt.getText().trim().equals("")){
+        if(nhanTxt.getText()== null || nhanTxt.getText().trim().equals("")){
+            lbCheck.setText("Vui lòng kiểm tra người nhận trước");
+        }else{
             if(tienTxt.getText().trim().equals("")){
                 lbCheck.setText("Bạn chưa nhập số tiền");
             }else{
                 try {
                     int tien= Integer.parseInt(tienTxt.getText());
+                    if(tien<= 10000){
+                        lbCheck.setText("Chỉ được phép chuyển tối thiểu 10.000 VNĐ");
+                    }else{
                     if(tien> 10000000){
                         lbCheck.setText("Chỉ được phép chuyển tối đa 10.000.000 VNĐ 1 lần");
                     }else{
@@ -120,14 +125,13 @@ public class ChuyenTienController {
                             Main.showChuyenTienTC();
                         }
                     }
+                    }
                 } catch (NumberFormatException e) {
                     lbCheck.setText("Số tiền bạn nhập chưa hợp lệ");
                 } catch (SQLException ex) {
                     Logger.getLogger(ChuyenTienController.class.getName()).log(Level.SEVERE, null, ex);
                 }
             }
-        }else{
-            lbCheck.setText("Vui lòng kiểm tra người nhận trước");
         }
     }
 }

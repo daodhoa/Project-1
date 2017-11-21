@@ -11,32 +11,32 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" layoutX="40.0" layoutY="55.0" prefHeight="38.0" prefWidth="441.0" text="Vui lòng ấn Tiếp tục để lấy biên lai">
+            <Label alignment="CENTER" layoutX="40.0" layoutY="14.0" prefHeight="38.0" prefWidth="441.0" text="Vui lòng ấn Tiếp tục để lấy biên lai">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button layoutX="442.0" layoutY="52.0" mnemonicParsing="false" onAction="#rutTien" prefHeight="45.0" prefWidth="110.0" text="Tiếp tục" textFill="#e41919">
+            <Button layoutX="435.0" layoutY="11.0" mnemonicParsing="false" onAction="#rutTien" prefHeight="45.0" prefWidth="110.0" text="Tiếp tục" textFill="#e41919">
                <font>
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label fx:id="account" layoutX="40.0" layoutY="131.0" prefHeight="36.0" prefWidth="162.0">
+            <Label fx:id="account" layoutX="40.0" layoutY="200.0" prefHeight="36.0" prefWidth="162.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="amount" layoutX="40.0" layoutY="182.0" prefHeight="36.0" prefWidth="162.0">
+            <Label fx:id="amount" layoutX="40.0" layoutY="234.0" prefHeight="36.0" prefWidth="162.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lgBalance" layoutX="40.0" layoutY="234.0" prefHeight="36.0" prefWidth="162.0">
+            <Label fx:id="lgBalance" layoutX="40.0" layoutY="271.0" prefHeight="36.0" prefWidth="162.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="abBalance" layoutX="40.0" layoutY="289.0" prefHeight="36.0" prefWidth="162.0">
+            <Label fx:id="abBalance" layoutX="40.0" layoutY="307.0" prefHeight="36.0" prefWidth="162.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -46,22 +46,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbAcc" layoutX="202.0" layoutY="131.0" prefHeight="36.0" prefWidth="320.0">
+            <Label fx:id="lbAcc" layoutX="202.0" layoutY="200.0" prefHeight="36.0" prefWidth="320.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbAmount" layoutX="202.0" layoutY="182.0" prefHeight="36.0" prefWidth="320.0">
+            <Label fx:id="lbAmount" layoutX="202.0" layoutY="234.0" prefHeight="36.0" prefWidth="320.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbLG" layoutX="202.0" layoutY="234.0" prefHeight="36.0" prefWidth="320.0">
+            <Label fx:id="lbLG" layoutX="202.0" layoutY="271.0" prefHeight="36.0" prefWidth="320.0">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="lbAB" layoutX="202.0" layoutY="289.0" prefHeight="36.0" prefWidth="320.0">
+            <Label fx:id="lbAB" layoutX="202.0" layoutY="307.0" prefHeight="36.0" prefWidth="320.0">
                <font>
                   <Font size="18.0" />
                </font>
@@ -76,6 +76,21 @@
                   <Font size="15.0" />
                </font>
             </Button>
+            <Label fx:id="lbTitle" alignment="CENTER" layoutX="14.0" layoutY="112.0" prefHeight="36.0" prefWidth="494.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="soGD" layoutX="39.0" layoutY="164.0" prefHeight="36.0" prefWidth="162.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="codeGD" layoutX="202.0" layoutY="164.0" prefHeight="36.0" prefWidth="320.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </center>

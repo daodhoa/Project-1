@@ -41,7 +41,7 @@ public class BienLaiController {
     @FXML
     private Label abBalance;
     @FXML
-    private Label date;
+    private Label date, lbTitle, soGD, codeGD;
             
     Connection connection= null;
     PreparedStatement pS= null;
@@ -53,6 +53,7 @@ public class BienLaiController {
     
     private String cmnd;
     private int sodu;
+    private int maGD;
     Date dt= new Date();
     String str = String.format("%tc", dt );
     @FXML
@@ -69,17 +70,27 @@ public class BienLaiController {
             while(resultSet.next()){
                 cmnd= resultSet.getString("SoTK");
                 sodu= resultSet.getInt("SoDu");
+               // maGD= resultSet.getInt("3");
             }
             resultSet.close();
+            
+            PreparedStatement ps= connection.prepareStatement("select MaBienLai from BienLai where MaBienLai >= all(select MaBienLai from BienLai)");
+            ResultSet rs= ps.executeQuery();
+            if(rs.next()){
+                maGD= rs.getInt(1);
+            }
         } catch (SQLException ex) {
             Logger.getLogger(BienLaiController.class.getName()).log(Level.SEVERE, null, ex);
         }
-        account.setText("Account: ");
-        amount.setText("Amount: ");
-        lgBalance.setText("L/G Balace: ");
-        abBalance.setText("A/B Balance: ");
-        date.setText("Date: ");
+        lbTitle.setText("GIAO DỊCH RÚT TIỀN");
+        soGD.setText("Số G/D: ");
+        account.setText("Số TK: ");
+        amount.setText("Số tiền: ");
+        lgBalance.setText("Số dư: ");
+        abBalance.setText("Số dư dùng được: ");
+        date.setText("Ngày GD: ");
         
+        codeGD.setText(String.valueOf(maGD));
         lbAcc.setText(cmnd);
         lbAmount.setText(String.valueOf(money));
         lbLG.setText(String.valueOf(sodu)+ " VND");

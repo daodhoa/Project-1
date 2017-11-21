@@ -17,6 +17,8 @@ import java.util.Calendar;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 //import java.util.Date;
 import javafx.fxml.FXML;
 import javafx.scene.control.DatePicker;
@@ -33,6 +35,11 @@ public class DangKiController {
     ResultSet resultSet= null;
     public DangKiController(){
         connection= DbConnection.connectDb();
+    }
+    private boolean checkEmail(String value) { 
+        Pattern pattern = Pattern.compile("[a-zA-Z][_]*\\d*@[a-z]{2,5}[.][a-z]{2,3}"); 
+        Matcher matcher = pattern.matcher(value); 
+        return matcher.find(); 
     }
     
     Calendar cal = Calendar.getInstance();
@@ -67,6 +74,8 @@ public class DangKiController {
                 //System.out.println("check CMND" +checkCMND);
                 
                 if("".equals(checkCMND)){
+                    if(checkEmail(email.getText())){
+                        
                     if(pwTxt.getText().equals(rePwTxt.getText())){
                     ps= connection.prepareStatement("insert into KhachHang values (?,?,?,?,?); insert into TKKhachHang (CMND, NgayTao, MatKhau, SoDu) values (?,?,?,?)");
                     ps.setString(1, cmnd.getText());
@@ -80,12 +89,14 @@ public class DangKiController {
                     ps.setString(8, MaHoa.md5(pwTxt.getText())); 
                     ps.setInt(9, 50000);
                     ps.execute();
-                    ps.close();
                     Main.showDangKiTC();
                     }else{
                         checkLb.setText("Nhập lại mật khẩu không đúng");
                         pwTxt.setText(null);
                         rePwTxt.setText(null);
+                    }
+                    }else{
+                        checkLb.setText("Email không hợp lệ");
                     }
                 }else{
                     checkLb.setText("Người dùng đã tồn tại");
