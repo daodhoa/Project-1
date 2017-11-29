@@ -59,14 +59,19 @@ public class ChuyenTienController {
             lbTK.setText("Vui lòng nhập số TK người nhận");
         }else{
             try {
-                pS= connection.prepareStatement("select HoTen, SoTK from KhachHang, TKKhachHang where SoTK =?");
+                long a= Long.parseLong(nhanTxt.getText());
+                pS= connection.prepareStatement("select HoTen, SoTK from KhachHang, TKKhachHang "
+                        + "where KhachHang.CMND= TKKhachHang.CMND and SoTK =?");
                 pS.setString(1, nhanTxt.getText());
                 resultSet= pS.executeQuery();
                 while(resultSet.next()){
                     cm= resultSet.getString("SoTK");
+                    //long a= Long.parseLong(cm);
                     ten= resultSet.getString("HoTen");
                 }
                 resultSet.close();
+            } catch(NumberFormatException exz){
+                lbTK.setText("Số Tài khoản chỉ gồm các chữ số!");
             } catch (SQLException ex) {
                 Logger.getLogger(ChuyenTienController.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -101,7 +106,7 @@ public class ChuyenTienController {
             }else{
                 try {
                     int tien= Integer.parseInt(tienTxt.getText());
-                    if(tien<= 10000){
+                    if(tien< 10000){
                         lbCheck.setText("Chỉ được phép chuyển tối thiểu 10.000 VNĐ");
                     }else{
                     if(tien> 10000000){
@@ -110,7 +115,9 @@ public class ChuyenTienController {
                         if(tien> (mySoDu- 50000)){
                             lbCheck.setText("Tài khoản của bạn không đủ để giao dịch");
                         }else{
-                            PreparedStatement ps= connection.prepareStatement("update TKKhachHang set SoDu= SoDu -? where SoTK= ?; update TKKhachHang set SoDu= SoDu +? where SoTK= ?; insert into BienLai (MaGiaoDich, SoTienGD, SoTK, SoTKNhan, ThoiGian) values (?,?,?,?,?)");
+                            PreparedStatement ps= connection.prepareStatement("update TKKhachHang set SoDu= SoDu -? where SoTK= ?; "
+                                    + "update TKKhachHang set SoDu= SoDu +? where SoTK= ?; "
+                                    + "insert into BienLai (MaGiaoDich, SoTienGD, SoTK, SoTKNhan, ThoiGian) values (?,?,?,?,?)");
                             ps.setInt(1, tien);
                             ps.setString(2, Logined);
                             ps.setInt(3, tien);

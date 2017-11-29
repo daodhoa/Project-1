@@ -74,15 +74,25 @@ public class LoginItemsController {
 
     @FXML
     private void goMenu() throws IOException{
+        //int count =3;
         if(txtId.getText().trim().length()== 0 || txtPass.getText().trim().length()== 0){
             errorLabel.setText("Bạn chưa nhập Số TK hoặc Password");
             return;
         }
+        try{
+        long soTK= Long.parseLong(txtId.getText());
+        
         if((txtId.getText()).equals(getID())&&  MaHoa.md5(txtPass.getText()).equals(getPass())){
             Main.showMenuScene();
             Main.Logined = txtId.getText();
-        }else{
+        }
+        else{
             errorLabel.setText("Sai Số TK hoặc mật khẩu");
+            //count--;
+        }
+     
+        }catch(NumberFormatException e){
+            errorLabel.setText("Số TK chỉ được gồm các chữ số");
         }
     }
     @FXML
