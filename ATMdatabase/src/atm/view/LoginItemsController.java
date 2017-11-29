@@ -20,10 +20,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class LoginItemsController {
    //public String logined;
     private Main main;

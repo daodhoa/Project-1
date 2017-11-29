@@ -13,10 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
 
-/**
- *
- * @author Đào D. Hòa
- */
 public class Main extends Application {
     public static String Logined;
 

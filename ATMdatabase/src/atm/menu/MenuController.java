@@ -11,10 +11,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class MenuController {
     private Main main;
     @FXML

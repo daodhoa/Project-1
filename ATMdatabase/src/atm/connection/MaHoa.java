@@ -9,10 +9,7 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class MaHoa {
     public static String md5(String str){
 		String result = "";

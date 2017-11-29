@@ -17,10 +17,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class DangKiTCController {
     Connection connection= null;
     PreparedStatement ps= null;

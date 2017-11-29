@@ -20,10 +20,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class DoiPinController {
     private Main  main;
     @FXML

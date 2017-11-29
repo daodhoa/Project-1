@@ -9,10 +9,7 @@ import atm.Main;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class DichVuController {
     private Main main;
     @FXML

@@ -21,10 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class ChuyenTienController {
     private Main main;
    // private String cmnd;

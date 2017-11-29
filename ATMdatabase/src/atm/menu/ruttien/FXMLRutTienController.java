@@ -18,10 +18,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class FXMLRutTienController {
     private Main main;
     public static int money= 0;

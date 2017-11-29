@@ -10,10 +10,7 @@ import static atm.Main.Logined;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class MainViewController {
     private Main main;
     @FXML

@@ -20,10 +20,7 @@ import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class SoKhacController {
     //money =0;
     

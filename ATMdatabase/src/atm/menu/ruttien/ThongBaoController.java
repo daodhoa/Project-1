@@ -5,18 +5,12 @@
  */
 package atm.menu.ruttien;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 import atm.Main;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
-/**
- *
- * @author Đào D. Hòa
- */
+
 public class ThongBaoController {
     private Main main;
     @FXML
