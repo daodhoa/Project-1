@@ -35,7 +35,8 @@ public class DangKiTCController {
     private void showThongTin(){
         String hoten= null, taikhoan= null, ngaydk= null;
         try {
-            ps= connection.prepareStatement("select HoTen, SoTK, NgayTao from TKKhachHang, KhachHang where KhachHang.CMND= TKKhachHang.CMND and SoTK >=all(select SoTK from TKKhachHang)");
+            ps= connection.prepareStatement("select HoTen, SoTK, NgayTao from TKKhachHang, KhachHang"
+                    + " where KhachHang.CMND= TKKhachHang.CMND and SoTK >=all(select SoTK from TKKhachHang)");
             rs= ps.executeQuery();
             while(rs.next()){
                  hoten= rs.getString("HoTen");

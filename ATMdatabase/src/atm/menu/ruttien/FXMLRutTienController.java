@@ -47,7 +47,8 @@ public class FXMLRutTienController {
     }
     private void truTien(){
          try {
-            pS= connection.prepareStatement("update TKKhachHang set SoDu = (SoDu- ?) where SoTK= ?; insert into BienLai (MaGiaoDich, SoTienGD, SoTK, ThoiGian) values (?,?,?,?) ");
+            pS= connection.prepareStatement("update TKKhachHang set SoDu = (SoDu- ?) where SoTK= ?;"
+                    + " insert into BienLai (MaGiaoDich, SoTienGD, SoTK, ThoiGian) values (?,?,?,?) ");
             pS.setInt(1, money);
             pS.setString(2, Logined);
             pS.setString(3, "#4");

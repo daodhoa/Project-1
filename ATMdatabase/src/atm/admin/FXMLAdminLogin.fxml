@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.admin.AdminLoginController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="errorLabel" alignment="CENTER" layoutX="90.0" layoutY="34.0" prefHeight="44.0" prefWidth="431.0" textFill="#ee1818">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <JFXTextField fx:id="txtID" layoutX="181.0" layoutY="141.0" prefHeight="40.0" prefWidth="250.0" promptText="Tên đăng nhập">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txtPW" layoutX="181.0" layoutY="209.0" prefHeight="40.0" prefWidth="250.0" promptText="Mật khẩu">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </JFXPasswordField>
+            <Button layoutX="223.0" layoutY="283.0" mnemonicParsing="false" onAction="#DangNhap" prefHeight="41.0" prefWidth="154.0" text="Đăng nhập">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

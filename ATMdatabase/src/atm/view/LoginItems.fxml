@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import java.lang.*?>
@@ -12,30 +16,41 @@
    <center>
       <FlowPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane prefHeight="400.0" prefWidth="600.0">
+            <AnchorPane fx:id="anchor" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../styles/styles.css">
                <children>
-                  <TextField fx:id="txtId" layoutX="355.0" layoutY="148.0" prefHeight="37.0" prefWidth="201.0" promptText="id" />
-                  <PasswordField fx:id="txtPass" layoutX="355.0" layoutY="199.0" prefHeight="34.0" prefWidth="201.0" promptText="pass" />
-                  <Button layoutX="355.0" layoutY="262.0" mnemonicParsing="false" onAction="#goMenu" prefHeight="30.0" prefWidth="200.0" text="Login">
+                  <Button layoutX="355.0" layoutY="262.0" mnemonicParsing="false" onAction="#goMenu" prefHeight="30.0" prefWidth="200.0" text="Đăng nhập">
                      <font>
                         <Font size="15.0" />
                      </font></Button>
-                  <Label fx:id="errorLabel" layoutX="355.0" layoutY="96.0" prefHeight="26.0" prefWidth="200.0" />
-                  <Label alignment="CENTER" layoutX="13.0" layoutY="126.0" prefHeight="44.0" prefWidth="341.0" text="Vui lòng đăng nhập để sử dụng">
+                  <Label fx:id="errorLabel" alignment="CENTER" layoutX="336.0" layoutY="89.0" prefHeight="33.0" prefWidth="239.0" textAlignment="CENTER" textFill="WHITE">
                      <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Label>
-                  <Label alignment="CENTER" layoutX="109.0" layoutY="192.0" prefHeight="34.0" prefWidth="124.0" text="hoặc">
-                     <font>
-                        <Font size="23.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="71.0" layoutY="262.0" mnemonicParsing="false" onAction="#goDangKi" prefHeight="30.0" prefWidth="200.0" text="Đăng kí tài khoản">
+                        <Font size="14.0" />
+                     </font></Label>
+                  <Button layoutX="355.0" layoutY="311.0" mnemonicParsing="false" onAction="#goDangKi" prefHeight="30.0" prefWidth="200.0" text="Đăng kí tài khoản">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </Button>
+                  <JFXTextField id="id" fx:id="txtId" layoutX="355.0" layoutY="152.0" prefHeight="37.0" prefWidth="201.0" promptText="Số Tài Khoản" unFocusColor="#e1d5dc">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXPasswordField id="pw" fx:id="txtPass" layoutX="355.0" layoutY="191.0" prefHeight="37.0" prefWidth="201.0" promptText="Mật Khẩu" unFocusColor="#e1dada">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <ImageView fitHeight="299.0" fitWidth="293.0" layoutX="30.0" layoutY="60.0" opacity="0.72" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/ace.jpg" />
+                     </image>
+                  </ImageView>
+                  <Hyperlink alignment="CENTER" layoutX="355.0" layoutY="359.0" onAction="#goAdminLogin" prefHeight="23.0" prefWidth="200.0" text="Bạn là admin??" textFill="#c61010">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Hyperlink>
                </children>
             </AnchorPane>
          </children></FlowPane>

@@ -7,16 +7,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.MenuController">
+<BorderPane id="border" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../../styles/styles.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.menu.MenuController">
    <top>
-      <Label alignment="CENTER" prefHeight="51.0" prefWidth="388.0" text="Quý khách vui lòng lựa chọn dịch vụ" BorderPane.alignment="CENTER">
-         <font>
-            <Font size="19.0" />
-         </font>
-      </Label>
-   </top>
-   <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
             <Button layoutX="38.0" layoutY="108.0" mnemonicParsing="false" onAction="#goNapTien" prefHeight="45.0" prefWidth="200.0" text="Nạp Tiền" AnchorPane.leftAnchor="40.0">
                <font>
@@ -48,7 +41,12 @@
                   <Font size="18.0" />
                </font>
             </Button>
+            <Label alignment="CENTER" layoutX="106.0" prefHeight="51.0" prefWidth="388.0" text="Quý khách vui lòng lựa chọn dịch vụ">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
-   </center>
+   </top>
 </BorderPane>

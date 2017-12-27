@@ -8,6 +8,8 @@ package atm.view;
 import atm.Main;
 import atm.connection.DbConnection;
 import atm.connection.MaHoa;
+import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,19 +19,19 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+//import javafx.scene.control.PasswordField;
+//import javafx.scene.control.TextField;
 
 
 public class LoginItemsController {
    //public String logined;
-    private Main main;
+    //private Main main;
     @FXML
     private Label errorLabel;
     @FXML
-    private TextField txtId;
+    private JFXTextField txtId;
     @FXML
-    private PasswordField txtPass;
+    private JFXPasswordField txtPass;
     
     Connection connection= null;
     PreparedStatement pS= null;
@@ -95,5 +97,10 @@ public class LoginItemsController {
     @FXML
     private void goDangKi() throws IOException{
         Main.showDangKi();
+    }
+    
+    @FXML
+    private void goAdminLogin() throws IOException{
+        Main.showAdminLogin();
     }
 }

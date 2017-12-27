@@ -56,8 +56,11 @@ public class DangKiController {
     }
     @FXML
     private void DangKi() throws IOException{
+        
         String checkCMND = "";
-        if(hoTen.getText().trim().equals("") || cmnd.getText().trim().equals("") || diaChi.getText().trim().equals("") || pwTxt.getText().trim().equals("") || rePwTxt.getText().trim().equals("") || birthTxt.getValue().toString().trim().equals("")){
+        if(hoTen.getText().trim().equals("") || cmnd.getText().trim().equals("") 
+                || diaChi.getText().trim().equals("") || pwTxt.getText().trim().equals("") || 
+                rePwTxt.getText().trim().equals("") || birthTxt.getValue().toString().trim().equals("")){
             checkLb.setText("Bạn phải nhập đầy đủ thông tin");
         }else{
             try {
@@ -74,7 +77,8 @@ public class DangKiController {
                     if(checkEmail(email.getText())){
                         
                     if(pwTxt.getText().equals(rePwTxt.getText())){
-                    ps= connection.prepareStatement("insert into KhachHang values (?,?,?,?,?); insert into TKKhachHang (CMND, NgayTao, MatKhau, SoDu) values (?,?,?,?)");
+                    ps= connection.prepareStatement("insert into KhachHang values (?,?,?,?,?); "
+                            + "insert into TKKhachHang (CMND, NgayTao, MatKhau, SoDu) values (?,?,?,?)");
                     ps.setString(1, cmnd.getText());
                     ps.setString(2, hoTen.getText());
                     ps.setString(3, birthTxt.getValue().toString());
@@ -89,15 +93,15 @@ public class DangKiController {
                     Main.showDangKiTC();
                     }else{
                         checkLb.setText("Nhập lại mật khẩu không đúng");
-                        pwTxt.setText(null);
-                        rePwTxt.setText(null);
+                        pwTxt.setText("");
+                        rePwTxt.setText("");
                     }
                     }else{
                         checkLb.setText("Email không hợp lệ");
                     }
                 }else{
                     checkLb.setText("Người dùng đã tồn tại");
-                    cmnd.setText(null);
+                    cmnd.setText("");
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(DangKiController.class.getName()).log(Level.SEVERE, null, ex);

@@ -9,13 +9,13 @@
 
 <BorderPane id="AnchorPane" prefHeight="500.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="atm.view.MainViewController">
    <top>
-      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <ToolBar fx:id="toolbar" prefHeight="100.0" prefWidth="200.0" stylesheets="@../../styles/styles.css" BorderPane.alignment="CENTER">
         <items>
           <Button mnemonicParsing="false" onAction="#goHome" prefHeight="37.0" prefWidth="92.0" text="Đăng xuất">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Label alignment="CENTER" prefHeight="59.0" prefWidth="424.0" text="ACE Bank" textAlignment="CENTER" textFill="#da0f0f">
+            <Label alignment="CENTER" prefHeight="59.0" prefWidth="424.0" text="ACE Bank" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font size="34.0" />
                </font>

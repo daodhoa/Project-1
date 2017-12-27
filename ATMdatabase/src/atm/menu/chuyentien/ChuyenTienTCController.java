@@ -39,7 +39,8 @@ public class ChuyenTienTCController {
         int mabienlai = 0, sotien = 0;
         String soTk = null, soTkNhan = null, thoigian = null;
         try {
-            pS= connection.prepareStatement("select MaBienLai, SoTK, SoTienGD, SoTKNhan, ThoiGian from BienLai where MaBienLai >= all(select MaBienLai from BienLai)");
+            pS= connection.prepareStatement("select MaBienLai, SoTK, SoTienGD, SoTKNhan, ThoiGian"
+                    + " from BienLai where MaBienLai >= all(select MaBienLai from BienLai)");
             resultSet= pS.executeQuery();
             while(resultSet.next()){
                 mabienlai= resultSet.getInt(1);

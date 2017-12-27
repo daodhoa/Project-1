@@ -1,0 +1,18 @@
+
+.button {
+    -fx-background-color: #ff3333;
+    -fx-background-radius: 40;
+    -fx-text-fill: white;
+}
+
+#anchor {
+    -fx-background-color: linear-gradient(#cc0000, black);
+}
+#toolbar{
+    -fx-background-color: #cc0000;
+}
+
+#id, #pw{
+    -fx-text-inner-color: white;
+    -fx-prompt-text-fill: white;
+}
